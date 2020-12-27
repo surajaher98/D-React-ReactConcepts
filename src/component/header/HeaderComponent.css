@@ -1,0 +1,18 @@
+.userNameText{
+    font-size: 20px;
+    vertical-align: text-bottom;
+}
+
+.linksSpacing{
+    margin-left: 20px !important;
+    color: white !important;
+}
+
+.linksSpacing:hover {
+  color: white !important;
+  cursor: pointer;
+}
+
+.headerSection{
+  margin-bottom: 20px !important;
+}

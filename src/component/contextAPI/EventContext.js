@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '@material-ui/core/Button';
 import { createContext, useState } from 'react'
 import Snackbar from '@material-ui/core/Snackbar';
@@ -25,7 +25,8 @@ export const EventContext = createContext();
 
 export const EventContextProvider = ({ children }) => {
 
-    const [loginUserName, setLoginUserName] = useState({ firstName: '', lastName: '' });
+    const [loginUserData, setloginUserData] = useState({ id: '', firstName: '', lastName: '' });
+    const [message, setMessage] = useState('');
     const [users, addUser] = useState([
         {
             "id": 1,
@@ -59,19 +60,19 @@ export const EventContextProvider = ({ children }) => {
             "id": 5,
             "firstName": "Test",
             "lastName": "Test",
-            "userName": "abc",
+            "userName": "abc@",
             "password": "123"
         },
     ]);
-
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [toasterSeverity, SetToasterSeverity] = useState(false);
 
-    const handleClick = (seretity) => {
+    const handleClick = (seretity, message) => {
         SetToasterSeverity(seretity);
-        // setOpen(true);
+        setMessage(message);
+        setOpen(true);
     };
 
     const handleClose = (event, reason) => {
@@ -85,15 +86,13 @@ export const EventContextProvider = ({ children }) => {
     return (
         <div>
             <div className={classes.root}>
-                <Snackbar open={open} autoHideDuration={13000} onClose={handleClose}>
+                <Snackbar open={open} autoHideDuration={20000} onClose={handleClose}>
                     <Alert onClose={handleClose} severity={toasterSeverity ? 'success' : 'error'}>
-                        {
-                            toasterSeverity ? 'Success' : 'Error'
-                        }
+                        {message}
                     </Alert>
                 </Snackbar>
             </div>
-            <EventContext.Provider value={{ loginUserName, setLoginUserName, users, addUser, handleClick, handleClose }}>
+            <EventContext.Provider value={{ loginUserData, setloginUserData, users, addUser, handleClick, handleClose }}>
                 {children}
             </EventContext.Provider>
         </div>

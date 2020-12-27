@@ -1,0 +1,65 @@
+.trackNo{
+     font-size: 18px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 5%;
+}
+.trackLikes{
+    font-size: 18px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 5%;
+}
+
+.trackTitle{
+     font-size: 18px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 25%;
+}
+.trackArtist{
+       font-size: 18px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 25%;
+}
+
+.trackDuration{
+    font-size: 18px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 5%;
+}
+
+.trackNoValue{
+     font-size: 13px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 5%;
+}
+.trackLikesValue{
+    font-size: 13px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 5%;
+}
+
+.trackTitleValue{
+     font-size: 13px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 25%;
+}
+.trackArtistValue{
+       font-size: 13px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 25%;
+}
+
+.trackDurationValue{
+    font-size: 13px;
+    margin-left: 1%;
+    display: inline-block;
+    width: 5%;
+}
