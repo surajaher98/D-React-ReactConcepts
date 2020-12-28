@@ -36,27 +36,26 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const SongsListComponent = (props) => {
-    let prop = {};
     const classes = useStyles();
     const config = new EndPoints();
-    const [tracks, setTracks] = useState({ playlistData: {}, tracksData: {} });
+    // const [tracks, setTracks] = useState({ playlistData: {}, tracksData: {} });
 
     useEffect(() => {
-        handlePlayListChange('https://api.spotify.com/v1/playlists/37i9dQZF1DXdSavJjIP6Fb/tracks');
+        // handlePlayListChange('https://api.spotify.com/v1/playlists/37i9dQZF1DXdSavJjIP6Fb/tracks');
     }, [])
 
-    const handlePlayListChange = (playlist) => {
-        // setSelectedCat(cattegoryId);
-        axios.get(`${playlist}`, { headers: { Authorization: `Bearer ${config.Token}` } })
-            .then(response => {
-                setTracks({ tracksData: response.data });
-                //  prop = { tracksData: response.data };
-                // setTracks(...tracks, { playlistData: {}, tracksData: response.data });
-            })
-            .catch((error) => {
-                console.log('error ' + error);
-            });
-    }
+    // const handlePlayListChange = (playlist) => {
+    //     // setSelectedCat(cattegoryId);
+    //     axios.get(`${playlist}`, { headers: { Authorization: `Bearer ${config.Token}` } })
+    //         .then(response => {
+    //             setTracks({ tracksData: response.data });
+    //             //  prop = { tracksData: response.data };
+    //             // setTracks(...tracks, { playlistData: {}, tracksData: response.data });
+    //         })
+    //         .catch((error) => {
+    //             console.log('error ' + error);
+    //         });
+    // }
 
 
 
@@ -72,8 +71,9 @@ const SongsListComponent = (props) => {
                     <Grid item xs={2}>
                         <Paper className={classes.paper}>
                             {/* <img src={prop.currentPlaylistTracks?.images[0]?.url} className="card-img-top" alt="..."></img> */}
-                            <img src='https://i.scdn.co/image/ab67616d0000b273d2f35b3cbb1d0ecd79bcea77' className="card-img-top" alt="..."></img>
+                            <img src={props.currentPlaylistTracks?.playlistData?.images[0].url} className="card-img-top" alt="..."></img>
                         </Paper>
+                        {props.currentPlaylistTracks?.playlistData?.name} {props.currentPlaylistTracks?.playlistData?.tracks?.total}
                     </Grid>
                 </Grid>
                 <Grid container spacing={1}>
@@ -88,20 +88,33 @@ const SongsListComponent = (props) => {
                         </Paper>
                     </Grid>
                     {
-                        tracks.tracksData.items?.length > 0 && tracks.tracksData.items.map((track, index) => {
-                            return <Grid item xs={12}>
+                        props.currentPlaylistTracks.tracksData.items?.length > 0 && props.currentPlaylistTracks.tracksData.items.map((track, index) => {
+                            return props.currentPlaylistTracks.playlistData.type == 'playlist' ? (<Grid item xs={12} className={'rowStyle'} key={track.id}>
                                 <Paper className={classes.songsPaper}>
                                     <span className={'trackNoValue'}>{index + 1}</span>
                                     {/* play btn */}
-                                    <span className={'trackLikesValue'}>{track.track.popularity}<Favorite /></span>
-                                    <span className={'trackTitleValue'}>{track.track.name}</span>
-                                    <span className={'trackArtistValue'}>{track.track.artists[0].name}</span>
-                                    <span className={'trackDurationValue'}>{millisToMinutesAndSeconds(track.track.duration_ms)}</span>
-                                    <Button onClick={() => { props.onTrackSelect(track) }} color="primary">
+                                    <span className={'trackLikesValue'}>{track.track?.popularity}<Favorite className={'favorite'} /></span>
+                                    <span className={'trackTitleValue'}>{track.track?.name}</span>
+                                    <span className={'trackArtistValue'}>{track.track.artists[0].name, track.track.artists[1]?.name}</span>
+                                    <span className={'trackDurationValue'}>{millisToMinutesAndSeconds(track?.track?.duration_ms)}</span>
+                                    <Button onClick={() => { props.onTrackSelect(track.track) }} color="primary">
                                         Play</Button>
                                 </Paper>
+                            </Grid>) : (
+                                    <Grid item xs={12} className={'rowStyle'} key={track.id}>
+                                        <Paper className={classes.songsPaper}>
+                                            <span className={'trackNoValue'}>{index + 1}</span>
+                                            {/* play btn */}
+                                            <span className={'trackLikesValue'}>{track?.popularity && track?.popularity}<Favorite className={'favorite'} /></span>
+                                            <span className={'trackTitleValue'}>{track.name}</span>
+                                            <span className={'trackArtistValue'}>{track.artists[0]?.name, track.artists[1]?.name}</span>
+                                            <span className={'trackDurationValue'}>{millisToMinutesAndSeconds(track?.duration_ms)}</span>
+                                            <Button onClick={() => { props.onTrackSelect(track) }} color="primary">
+                                                Play</Button>
+                                        </Paper>
+                                    </Grid>
+                                )
 
-                            </Grid>
                         })
                     }
                 </Grid>

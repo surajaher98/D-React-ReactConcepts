@@ -86,7 +86,7 @@ const CategoriesComponent = (props) => {
                                 size="large"
                                 className={classes.button}
                                 startIcon={<SaveIcon />}
-                                onClick={() => { props.handleCategoryChange(item.id) }}
+                                onClick={() => { props.handlePlayListChanges(item.id, item.name) }}
                             >
                                 {item.name}
                             </Button>

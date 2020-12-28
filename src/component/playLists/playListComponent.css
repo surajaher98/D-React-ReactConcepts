@@ -3,3 +3,11 @@
     font-size: 20px;
     margin-bottom: 20px;
 }
+.imgCard{
+        width: 90% !important;
+        height: 234px !important;
+        border: 1px solid !important
+    }
+.imgCard:hover {
+            width: 85% !important;
+        }
