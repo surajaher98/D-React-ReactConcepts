@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/D-React-ReactConcepts/static/css/main.77298701.chunk.css",
-    "main.js": "/D-React-ReactConcepts/static/js/main.97ee7f33.chunk.js",
-    "main.js.map": "/D-React-ReactConcepts/static/js/main.97ee7f33.chunk.js.map",
-    "runtime-main.js": "/D-React-ReactConcepts/static/js/runtime-main.1c2e043a.js",
-    "runtime-main.js.map": "/D-React-ReactConcepts/static/js/runtime-main.1c2e043a.js.map",
+    "main.js": "/D-React-ReactConcepts/static/js/main.b2cacf64.chunk.js",
+    "main.js.map": "/D-React-ReactConcepts/static/js/main.b2cacf64.chunk.js.map",
+    "runtime-main.js": "/D-React-ReactConcepts/static/js/runtime-main.2065763d.js",
+    "runtime-main.js.map": "/D-React-ReactConcepts/static/js/runtime-main.2065763d.js.map",
     "static/css/2.747d6aa3.chunk.css": "/D-React-ReactConcepts/static/css/2.747d6aa3.chunk.css",
-    "static/js/2.3a0a2158.chunk.js": "/D-React-ReactConcepts/static/js/2.3a0a2158.chunk.js",
-    "static/js/2.3a0a2158.chunk.js.map": "/D-React-ReactConcepts/static/js/2.3a0a2158.chunk.js.map",
-    "static/js/3.0d68dbe5.chunk.js": "/D-React-ReactConcepts/static/js/3.0d68dbe5.chunk.js",
-    "static/js/3.0d68dbe5.chunk.js.map": "/D-React-ReactConcepts/static/js/3.0d68dbe5.chunk.js.map",
+    "static/js/2.6722db8e.chunk.js": "/D-React-ReactConcepts/static/js/2.6722db8e.chunk.js",
+    "static/js/2.6722db8e.chunk.js.map": "/D-React-ReactConcepts/static/js/2.6722db8e.chunk.js.map",
+    "static/js/3.2475df8b.chunk.js": "/D-React-ReactConcepts/static/js/3.2475df8b.chunk.js",
+    "static/js/3.2475df8b.chunk.js.map": "/D-React-ReactConcepts/static/js/3.2475df8b.chunk.js.map",
     "index.html": "/D-React-ReactConcepts/index.html",
     "static/css/2.747d6aa3.chunk.css.map": "/D-React-ReactConcepts/static/css/2.747d6aa3.chunk.css.map",
     "static/css/main.77298701.chunk.css.map": "/D-React-ReactConcepts/static/css/main.77298701.chunk.css.map",
-    "static/js/2.3a0a2158.chunk.js.LICENSE.txt": "/D-React-ReactConcepts/static/js/2.3a0a2158.chunk.js.LICENSE.txt",
+    "static/js/2.6722db8e.chunk.js.LICENSE.txt": "/D-React-ReactConcepts/static/js/2.6722db8e.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/D-React-ReactConcepts/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.1c2e043a.js",
+    "static/js/runtime-main.2065763d.js",
     "static/css/2.747d6aa3.chunk.css",
-    "static/js/2.3a0a2158.chunk.js",
+    "static/js/2.6722db8e.chunk.js",
     "static/css/main.77298701.chunk.css",
-    "static/js/main.97ee7f33.chunk.js"
+    "static/js/main.b2cacf64.chunk.js"
   ]
 }
